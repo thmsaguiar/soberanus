@@ -1,0 +1,7 @@
+{
+  "name": "soberanus-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
