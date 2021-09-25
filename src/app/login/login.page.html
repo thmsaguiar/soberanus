@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <div class="login-header ion-padding">
+    <img class="logo-img" src="assets/img/logo.png">
+  </div>
+</ion-header>
+
+<ion-content>
+  <!-- Inputs user e password -->
+  <div id="container">
+    <div>
+      <p>Login</p>      
+    </div>
+    <ion-item>        
+      <ion-input [(ngModel)] ="User" placeholder="Usuario" type="text"></ion-input>
+      <ion-icon name="person-circle-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item transparent>        
+      <ion-input [(ngModel)] ="Password" placeholder="Senha" type="text"></ion-input>
+      <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+    </ion-item>
+    <!-- Botão entrar -->
+    <ion-button class="btn-login" color="success" shape="round" (click)="login()">ENTRAR</ion-button>
+  </div>
+</ion-content>
