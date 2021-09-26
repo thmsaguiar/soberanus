@@ -10,15 +10,18 @@
     <div>
       <p>Login</p>      
     </div>
-    <ion-item>        
-      <ion-input [(ngModel)] ="User" placeholder="Usuario" type="text"></ion-input>
-      <ion-icon name="person-circle-outline" slot="end"></ion-icon>
-    </ion-item>
-    <ion-item transparent>        
-      <ion-input [(ngModel)] ="Password" placeholder="Senha" type="text"></ion-input>
-      <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
-    </ion-item>
-    <!-- Botão entrar -->
-    <ion-button class="btn-login" color="success" shape="round" (click)="login()">ENTRAR</ion-button>
+    <form [formGroup]="form">
+      <ion-item>        
+        <ion-input placeholder="Usuario" type="text" formControlName="user"></ion-input>
+        <ion-icon name="person-circle-outline" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item transparent>        
+        <ion-input placeholder="Senha" type="password" formControlName="password"></ion-input>
+        <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+      </ion-item>
+      <!-- Botão entrar -->
+      <ion-button class="btn-login" color="success" shape="round" (click)="goToInitial()">ENTRAR</ion-button>      
+    </form>
   </div>
+
 </ion-content>
