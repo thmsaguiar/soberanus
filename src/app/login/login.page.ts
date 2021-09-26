@@ -36,9 +36,12 @@ export class LoginPage implements OnInit {
     this.user = this.form.get('user').value;
     this.password = this.form.get('password').value;
     if((this.user == this.loginUser.user) && (this.password == this.loginUser.password)){
-      this.router.navigateByUrl('/home');//mudar para page inicial onde tem os produtos          
+      this.router.navigateByUrl('/initial');          
     }
     
+  }
+  goToHome(){
+    this.router.navigateByUrl('/home');
   }
 
 }
