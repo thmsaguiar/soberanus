@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginPageForm } from './login.page.form';
@@ -23,20 +24,26 @@ export class LoginPage implements OnInit {
     user: 'admin',
     password: 'admin'
   };
-  form: FormGroup;
+  public form: FormGroup;
 
-  constructor(public router:Router, private formBuilder: FormBuilder) { }
-
+  constructor(public router:Router, private formBuilder: FormBuilder,private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.form = new LoginPageForm(this.formBuilder).createForm();
   }
 
-  goToInitial(){        
+  async goToInitial(){        
     this.user = this.form.get('user').value;
     this.password = this.form.get('password').value;
     if((this.user == this.loginUser.user) && (this.password == this.loginUser.password)){
       this.router.navigateByUrl('/initial');          
+    }else{
+      const alert = await this.alertCtrl.create({
+        header: 'Usuário ou senha inválidos!',
+        message: 'Tente novamente.',
+        buttons:['OK']
+      });
+      alert.present();    
     }
     
   }
