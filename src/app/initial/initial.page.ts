@@ -8,6 +8,10 @@ interface IProducts{
   quantidade: number;
 }
 
+interface ITotal {
+  totalPrice: number;
+}
+
 @Component({
   selector: 'app-initial',
   templateUrl: './initial.page.html',
@@ -15,6 +19,10 @@ interface IProducts{
 })
 
 export class InitialPage implements OnInit {
+  public vTotal: ITotal = {
+    totalPrice: 0
+  };
+
   public products: IProducts [] = [
     {
       name: '01. Hot-Dog',
@@ -71,13 +79,15 @@ export class InitialPage implements OnInit {
   ngOnInit() {
   }
 
-  aumentar(product: IProducts): void {
+  aumentar(product: IProducts, total: ITotal): void {
     product.quantidade++;
+    total.totalPrice += product.price;
   }
 
-  diminuir(product: IProducts): void {
+  diminuir(product: IProducts, total: ITotal): void {
     if(product.quantidade > 0) {
       product.quantidade--;
+      total.totalPrice -= product.price;
     }
   }
 }
