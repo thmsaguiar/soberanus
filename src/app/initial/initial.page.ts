@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface ITotal {
+  totalPrice: number;
+}
 // Interface Produtos
-interface IProducts{
+interface IProducts {
   name: string;
   description: string;
   price: number;
@@ -15,7 +18,10 @@ interface IProducts{
 })
 
 export class InitialPage implements OnInit {
-  public products: IProducts [] = [
+  public vTotal: ITotal = {
+    totalPrice: 0
+  }
+  public products: IProducts[] = [
     {
       name: '01. Hot-Dog',
       description: 'Salsicha viena, batata palha, cheddar, farofa de bacon catchup e mostarda.',
@@ -48,18 +54,20 @@ export class InitialPage implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
   }
 
-  aumentar(product: IProducts): void {
+  aumentar(product: IProducts, total: ITotal): void {
     product.quantidade++;
+    total.totalPrice += product.price;
   }
 
-  diminuir(product: IProducts): void {
-    if(product.quantidade > 0) {
+  diminuir(product: IProducts, total: ITotal): void {
+    if (product.quantidade > 0) {
       product.quantidade--;
+      total.totalPrice -= product.price;
     }
   }
 }

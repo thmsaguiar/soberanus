@@ -10,9 +10,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <h3 class="titulo">Produtos</h3>
   <h2 class="subtitle">Faça o seu pedido:</h2>
   <ion-grid class="container">
-    <ion-row *ngFor="let product of products"><!--Aplicar ngFor-->
+    <ion-row *ngFor="let product of products">
+      <!--Aplicar ngFor-->
       <ion-col>
         <ion-card mode="ios" class="card">
           <ion-card-header>
@@ -33,7 +35,8 @@
             </ion-card-title>
             <ion-row class="card__row">
               <ion-col>
-                <ion-button color="danger" (click)="diminuir(product)" class="card__button"><ion-icon name="remove-outline"></ion-icon>
+                <ion-button color="danger" (click)="diminuir(product,vTotal)" class="card__button">
+                  <ion-icon name="remove-outline"></ion-icon>
                 </ion-button>
               </ion-col>
               <ion-col>
@@ -42,19 +45,18 @@
                 </ion-card-title>
               </ion-col>
               <ion-col>
-                <ion-button color="success" (click)="aumentar(product)" class="card__button"><ion-icon name="add-outline"></ion-icon>
+                <ion-button color="success" (click)="aumentar(product,vTotal)" class="card__button">
+                  <ion-icon name="add-outline"></ion-icon>
                 </ion-button>
               </ion-col>
             </ion-row>
           </ion-footer>
-
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
-
 <ion-footer class="footer">
   <h2 class="footer__subtitle">Total:&nbsp;</h2>
-  <span class="footer__total">R$</span>
+  <span class="footer__total">R${{vTotal.totalPrice}}</span>
 </ion-footer>
