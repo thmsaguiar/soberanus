@@ -1,5 +1,8 @@
-<ion-header class="ion-no-border" [translucent]="true">
-  <div class="initial-header ion-padding">
+<ion-header class="header">
+  <div class="header__content">
+    <img class="header__logo" src="assets/img/logo.png">
+    <h1 class="header__title">Produtos</h1>
+    <img class="header__exit" src="assets/img/exit.svg">
   </div>
   <style>
     @import url('http://fonts.cdnfonts.com/css/billion-dreams');
@@ -7,46 +10,51 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h3 class="titulo">Produtos</h3>
+  <h2 class="subtitle">Faça o seu pedido:</h2>
   <ion-grid class="container">
     <ion-row *ngFor="let product of products"><!--Aplicar ngFor-->
       <ion-col>
-        <ion-card mode="ios">
+        <ion-card mode="ios" class="card">
           <ion-card-header>
-            <ion-card-title style="font-size: 15px;">
+            <ion-card-title class="card__title">
               {{product.name}}
             </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            <label>R${{product.price}}</label>
+
+          <ion-card-content class="card__description">
+            <label>
+              {{product.description}}
+            </label>
           </ion-card-content>
-          <ion-footer>
-            <ion-row><!--Aplicar ngFor-->
+
+          <ion-footer class="card__footer">
+            <ion-card-title class="card__price">
+              R${{product.price}}
+            </ion-card-title>
+            <ion-row class="card__row">
               <ion-col>
-                <ion-button color="danger" (click)="diminuir(product)"><ion-icon name="remove-outline"></ion-icon>
+                <ion-button color="danger" (click)="diminuir(product)" class="card__button"><ion-icon name="remove-outline"></ion-icon>
                 </ion-button>
               </ion-col>
               <ion-col>
-                <label>{{product.quantidade}}</label>
+                <ion-card-title class="card__qnt">
+                  {{product.quantidade}}
+                </ion-card-title>
               </ion-col>
               <ion-col>
-                <ion-button color="success" (click)="aumentar(product)"><ion-icon name="add-outline"></ion-icon>
+                <ion-button color="success" (click)="aumentar(product)" class="card__button"><ion-icon name="add-outline"></ion-icon>
                 </ion-button>
               </ion-col>
             </ion-row>
           </ion-footer>
+
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div class="container">
-    <ion-row>
-      <ion-col>
-      <p class="sub-titulo">Total:</p>
-      </ion-col>
-      <ion-col>
-      <p class="total">R$</p>
-      </ion-col>
-    </ion-row>
-  </div>
 </ion-content>
+
+<ion-footer class="footer">
+  <h2 class="footer__subtitle">Total:&nbsp;</h2>
+  <span class="footer__total">R$</span>
+</ion-footer>
