@@ -23,14 +23,14 @@
           <ion-footer>
             <ion-row><!--Aplicar ngFor-->
               <ion-col>
-                <ion-button color="danger"><ion-icon name="remove-outline"></ion-icon>
+                <ion-button color="danger" (click)="diminuir(product)"><ion-icon name="remove-outline"></ion-icon>
                 </ion-button>
               </ion-col>
               <ion-col>
-                <ion-input type="number" align="center" value="0" style="font-size: 20px;"></ion-input>
+                <label>{{product.quantidade}}</label>
               </ion-col>
               <ion-col>
-                <ion-button color="success" ><ion-icon name="add-outline"></ion-icon>
+                <ion-button color="success" (click)="aumentar(product)"><ion-icon name="add-outline"></ion-icon>
                 </ion-button>
               </ion-col>
             </ion-row>
