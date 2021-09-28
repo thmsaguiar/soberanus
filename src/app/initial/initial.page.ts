@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-//Interface Produtos
+// Interface Produtos
 interface IProducts{
   name: string;
   price: number;
@@ -11,16 +11,35 @@ interface IProducts{
   templateUrl: './initial.page.html',
   styleUrls: ['./initial.page.scss'],
 })
+
 export class InitialPage implements OnInit {
+  public products: IProducts [] = [
+    {
+      name: 'Hot-Dog',
+      price: 10
+    },
+    {
+      name: 'X-Salada',
+      price: 12
+    },
+    {
+      name: 'X-Bacon',
+      price: 14
+    },
+    {
+      name: 'X-Tudo',
+      price: 18
+    },
+    {
+      name: 'X-Vegan',
+      price: 8
+    }
+  ];
 
-  public products: IProducts = {
-    name: 'Hot dog', 
-    price: 12
-  };
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
+
 
 }
