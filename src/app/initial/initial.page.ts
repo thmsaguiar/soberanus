@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-interface ITotal {
-  totalPrice: number;
-}
 // Interface Produtos
-interface IProducts {
+interface IProducts{
   name: string;
   description: string;
   price: number;
@@ -18,10 +15,7 @@ interface IProducts {
 })
 
 export class InitialPage implements OnInit {
-  public vTotal: ITotal = {
-    totalPrice: 0
-  }
-  public products: IProducts[] = [
+  public products: IProducts [] = [
     {
       name: '01. Hot-Dog',
       description: 'Salsicha viena, batata palha, cheddar, farofa de bacon catchup e mostarda.',
@@ -51,23 +45,39 @@ export class InitialPage implements OnInit {
       description: 'Burger falafel, queijo de mandioca, rucula, tomate cereja e molho especial vegano.',
       price: 16,
       quantidade: 0
+    },
+    {
+      name: '01. Coca-Cola',
+      description: 'Garrafa de vidro 250ml.',
+      price: 6,
+      quantidade: 0
+    },
+    {
+      name: '02. Suco Natural',
+      description: 'Laranja, abacaxi, morango, maracuja, limão, etc.',
+      price: 7,
+      quantidade: 0
+    },
+    {
+      name: '03. Cerveja',
+      description: 'Skol, Brahma, Itaipava, Heineken, etc.',
+      price: 5,
+      quantidade: 0
     }
   ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
 
-  aumentar(product: IProducts, total: ITotal): void {
+  aumentar(product: IProducts): void {
     product.quantidade++;
-    total.totalPrice += product.price;
   }
 
-  diminuir(product: IProducts, total: ITotal): void {
-    if (product.quantidade > 0) {
+  diminuir(product: IProducts): void {
+    if(product.quantidade > 0) {
       product.quantidade--;
-      total.totalPrice -= product.price;
     }
   }
 }
