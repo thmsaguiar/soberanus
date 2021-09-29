@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 // Interface Produtos
 interface IProducts{
@@ -75,7 +76,7 @@ export class InitialPage implements OnInit {
     }
   ];
 
-  constructor(public router:Router) {}
+  constructor(public router:Router, private alertCtrl: AlertController) {}
 
   ngOnInit() {
   }
@@ -94,5 +95,13 @@ export class InitialPage implements OnInit {
 
   exit(){
     this.router.navigateByUrl('/home');
+  }
+
+  async finish(){        
+    const alert = await this.alertCtrl.create({
+      header: 'Compra finalizada com sucesso!',
+      buttons:['OK']
+    });
+    alert.present();                  
   }
 }
