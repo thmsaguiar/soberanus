@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Interface Produtos
 interface IProducts{
@@ -74,7 +75,7 @@ export class InitialPage implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(public router:Router) {}
 
   ngOnInit() {
   }
@@ -89,5 +90,9 @@ export class InitialPage implements OnInit {
       product.quantidade--;
       total.totalPrice -= product.price;
     }
+  }
+
+  exit(){
+    this.router.navigateByUrl('/home');
   }
 }
