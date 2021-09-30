@@ -26,36 +26,36 @@ O projeto foi pensado para que os garçons da hamburgueria possam usar no smartp
 
 O aplicativo será utilizado somente pelos funcionários do estabelecimento, então foi definido um login e senha administrativo apenas por meios de segurança. Para receber os dados de user e senha foi criado no login.page.html um formulário.
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/home.png?raw=true" width="24%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/home.png?raw=true" width="35%"><br>
 
 ### <a name="login">02. Login</a>
 
 Página de login acessível para o garçon:
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/initial.png?raw=true" width="50%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/initial.png?raw=true" width="75%"><br>
 
 ### <a name="menu">03. Menu</a>
 
 Menu/cardápio, permitindo adicionar o produto desejado:
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/initial.png?raw=true" width="50%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/initial.png?raw=true" width="75%"><br>
 
 ### <a name="techs">Tecnologias</a>
 
 - [Ionic Framework](https://ionicframework.com/)
 - [Sass](https://sass-lang.com/)
 - [BEM CSS](https://desenvolvimentoparaweb.com/css/bem/)
-- [VSCode](https://react-icons.github.io/react-icons/)
+- [VSCode](https://code.visualstudio.com/)
 - [Figma](https://www.figma.com)
 
-### <a name="techs">Participantes do projeto</a>
+### <a name="participants">Participantes do projeto</a>
 
 Trabalho realizado através do matéria de Desenvolvimento de Aplicativos Mobile da Universidade Anhembi Morumbi.
 
 - [Bruno Vinicius da Silva](https://www.github.com/brunovns)
 - [Denilson Bernardo do Nascimento](https://www.github.com/DenilsonBernardodoNascimento)
-- [Erinaldo da Silva Pereira](https://www.github.com/)
-- [Rodnei Ribeiro de Carvalho](https://www.github.com/)
+- [Erinaldo da Silva Pereira](https://www.github.com/NaldooSilva)
+- [Rodnei Ribeiro de Carvalho](https://www.github.com/rodneicarvalho)
 - [Thomas Aguiar Vicente](https://www.github.com/thmsaguiar)
 - [Wellington de Almeida](https://www.github.com/otonalmeidas)
 
