@@ -89,19 +89,23 @@ export class InitialPage implements OnInit {
   diminuir(product: IProducts, total: ITotal): void {
     if(product.quantidade > 0) {
       product.quantidade--;
-      total.totalPrice -= product.price;
+      if( total.totalPrice > 0){
+        total.totalPrice -= product.price;
+      }
     }
   }
 
-  exit(){
-    this.router.navigateByUrl('/home');
-  }
-
   async finish(){        
-    const alert = await this.alertCtrl.create({
-      header: 'Compra finalizada com sucesso!',
-      buttons:['OK']
-    });
-    alert.present();                  
+    if(this.vTotal.totalPrice != 0){
+      this.vTotal.totalPrice = 0;  
+      for(var i = 0; i < this.products.length; i++){
+        this.products[i].quantidade = 0;
+      }   
+      const alert = await this.alertCtrl.create({
+        header: 'Efetue o pagamento!',
+        buttons:['OK']
+      });
+      alert.present();  
+    }                
   }
 }
