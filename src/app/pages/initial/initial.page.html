@@ -12,7 +12,7 @@
   <ion-grid class="container">
     <ion-row *ngFor="let product of products">
       <ion-col>
-        <ion-card mode="ios" class="card">
+        <div class="card">
           <ion-card-header>
             <ion-card-title class="card__title">
               {{product.name}}
@@ -46,9 +46,8 @@
                 </ion-button>
               </ion-col>
             </ion-row>
-          </ion-footer>
-
-        </ion-card>
+          </ion-footer>          
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
