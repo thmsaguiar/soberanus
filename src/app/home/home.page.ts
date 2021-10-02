@@ -10,8 +10,4 @@ export class HomePage {
 
   constructor(public router:Router) {}
 
-  goToLogin(){
-    this.router.navigateByUrl('/login');
-  }
-
 }
