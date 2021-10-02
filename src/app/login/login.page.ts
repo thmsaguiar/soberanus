@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
     this.user = this.form.get('user').value;
     this.password = this.form.get('password').value;
     if((this.user == this.loginUser.user) && (this.password == this.loginUser.password)){
-      this.router.navigateByUrl('/initial');          
+      this.router.navigateByUrl('/pages/initial');          
     }else{
       const alert = await this.alertCtrl.create({
         header: 'Usuário ou senha inválidos!',
@@ -44,11 +44,7 @@ export class LoginPage implements OnInit {
         buttons:['OK']
       });
       alert.present();    
-    }
-    
-  }
-  goToHome(){
-    this.router.navigateByUrl('/home');
-  }
+    }    
+  }  
 
 }

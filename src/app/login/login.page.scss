@@ -1,12 +1,7 @@
 ion-content{
 	--background: transparent;
 }
-ion-label{
-	color: #000;
-	opacity: .8;
-	font-size: 13px;
-	display: block;
-}
+
 #container {
   text-align: center;
   position: absolute;
@@ -34,9 +29,6 @@ ion-label{
 }
 
 /*cabeçalho superior*/
-.login-header{
-	background: #FF5733;
-}
 .login-header{
 	position: relative;
 	background: #FF5733;

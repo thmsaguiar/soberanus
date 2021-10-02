@@ -33,15 +33,13 @@ ion-content {
 
   &__content {
     width: 100%;
-    display: flex;
-    align-items: center;
+    text-align: center;
     justify-content: space-between;
   }
 
   &__title {
     margin: 0;
-    font-size: 36px;
-    text-align: center;
+    font-size: 36px;    
     font-family: "Billion Dreams", sans-serif;
   }
 
@@ -50,32 +48,10 @@ ion-content {
     margin-bottom: 16px;
   }
 
-  &__logo {
+  &__logo {    
     height: 32px;
   }
-
-  &__exit {
-    height: 22px;
-  }
-}
-
-.initial-header:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 15%;
-  width: 0;
-  height: 0;
-  margin-left: -15px;
-  margin-bottom: -15px;
-}
-
-.logo-img {
-  display: block;
-  width: 50px;
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: center;
+  
 }
 
 .subtitle {
@@ -83,12 +59,6 @@ ion-content {
   font-size: 16px;
   text-align: center;
   padding-bottom: 24px;
-}
-
-.total {
-  font-size: 15px;
-  margin-top: 30px;
-  text-align: left;
 }
 
 .card {
