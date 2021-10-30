@@ -28,7 +28,34 @@ export class InitialPage implements OnInit {
     totalPrice: 0
   };
 
-  public products: Product [] = [{
+  public products: Product [];
+
+  constructor(public router:Router, private alertCtrl: AlertController, private storageService: StorageService) {}
+
+  ngOnInit() {    
+    this.criarProdutos();
+  }
+
+  aumentar(product: Product, total: ITotal): void {
+    product.quantidade++;    
+    total.totalPrice += product.price;
+  }
+
+  diminuir(product: Product, total: ITotal): void {
+    if(product.quantidade > 0) {      
+      product.quantidade--;
+      if( total.totalPrice > 0){
+        total.totalPrice -= product.price;
+      }
+    }
+  }
+
+  ionViewDidEnter(){
+    this.criarProdutos();
+  }
+
+  criarProdutos(){
+    this.products = [{
       name: '01. Hot-Dog',
       description: 'Salsicha viena, batata palha, cheddar, farofa de bacon catchup e mostarda.',
       price: 10,
@@ -76,32 +103,14 @@ export class InitialPage implements OnInit {
       price: 5,
       quantidade: 0
     }
-  ];
-
-  constructor(public router:Router, private alertCtrl: AlertController, private storageService: StorageService) {}
-
-  ngOnInit() {    
-  }
-
-  aumentar(product: Product, total: ITotal): void {
-    product.quantidade++;    
-    total.totalPrice += product.price;
-  }
-
-  diminuir(product: Product, total: ITotal): void {
-    if(product.quantidade > 0) {      
-      product.quantidade--;
-      if( total.totalPrice > 0){
-        total.totalPrice -= product.price;
-      }
-    }
+  ];    
   }
 
   async finish(){      
     for(let iv of this.produtosVenda){
       if(iv.quantidade != 0){           
         this.produtosVenda.splice(this.produtosVenda.indexOf(iv));
-      }  
+      }        
     }    
     if(this.vTotal.totalPrice != 0){
       this.criarVenda();      
@@ -109,9 +118,10 @@ export class InitialPage implements OnInit {
         header: 'Efetue o pagamento!',
         buttons:['OK']
       });
-      alert.present();       
+      alert.present();             
       this.router.navigateByUrl('/pages/detalhes/'+this.id);      
     }                    
+    this.vTotal.totalPrice = 0;
   }
 
   async criarVenda(){        
