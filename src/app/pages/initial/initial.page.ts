@@ -2,13 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
-// Interface Produtos
-interface IProducts{
-  name: string;
-  description: string;
-  price: number;
-  quantidade: number;
-}
+import { Product } from 'src/app/models/Product';
+import { Venda } from 'src/app/models/Venda';
+import { StorageService } from 'src/app/services/storage.service';
 
 interface ITotal {
   totalPrice: number;
@@ -22,12 +18,13 @@ interface ITotal {
 
 export class InitialPage implements OnInit {
 
+  venda: Venda = new Venda();
+
   public vTotal: ITotal = {
     totalPrice: 0
   };
 
-  public products: IProducts [] = [
-    {
+  public products: Product [] = [{
       name: '01. Hot-Dog',
       description: 'Salsicha viena, batata palha, cheddar, farofa de bacon catchup e mostarda.',
       price: 10,
@@ -77,17 +74,17 @@ export class InitialPage implements OnInit {
     }
   ];
 
-  constructor(public router:Router, private alertCtrl: AlertController) {}
+  constructor(public router:Router, private alertCtrl: AlertController, private storageService: StorageService) {}
 
   ngOnInit() {
   }
 
-  aumentar(product: IProducts, total: ITotal): void {
+  aumentar(product: Product, total: ITotal): void {
     product.quantidade++;
     total.totalPrice += product.price;
   }
 
-  diminuir(product: IProducts, total: ITotal): void {
+  diminuir(product: Product, total: ITotal): void {
     if(product.quantidade > 0) {
       product.quantidade--;
       if( total.totalPrice > 0){
@@ -98,6 +95,7 @@ export class InitialPage implements OnInit {
 
   async finish(){        
     if(this.vTotal.totalPrice != 0){
+      this.criarVenda();
       this.vTotal.totalPrice = 0;  
       for(var i = 0; i < this.products.length; i++){
         this.products[i].quantidade = 0;
@@ -109,4 +107,17 @@ export class InitialPage implements OnInit {
       alert.present();  
     }                
   }
+
+  async criarVenda(){
+    var data = new Date();
+    var random = Math.floor(Math.random() * 999);
+    this.venda.id = random+"V";
+    this.venda.produtos = this.products;
+    this.venda.total = this.vTotal.totalPrice;
+    this.venda.data = data;
+
+    await this.storageService.set(this.venda.id, this.venda);  
+    
+  }
+
 }

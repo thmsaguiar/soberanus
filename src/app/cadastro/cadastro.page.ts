@@ -37,8 +37,10 @@ export class CadastroPage implements OnInit {
     var tem = false;
     if(this.formCadastro.valid){
       for(let users of this.listaUser){
-        if(users.user == this.usuario.user){
-          tem = true;
+        if(this.usuario.user == users.user){ 
+          if(users.user != null){          
+            tem = true;
+          }  
         }
       }
       if(tem == false){

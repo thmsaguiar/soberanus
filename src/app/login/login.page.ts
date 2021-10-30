@@ -8,13 +8,6 @@ import { LoginPageForm } from './login.page.form';
 import { Usuario } from './../models/Usuario';
 import { StorageService } from './../services/storage.service';
 
-
-//Interface Login
-/*interface ILogin{
-  user: string;
-  password: string;
-}*/
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',

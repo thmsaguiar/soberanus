@@ -8,13 +8,19 @@ import { PagesPageRoutingModule } from './pages-routing.module';
 
 import { PagesPage } from './pages.page';
 
-@NgModule({
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
+
+@NgModule({  
   imports: [
     CommonModule,
-    FormsModule,
-    IonicModule,
-    PagesPageRoutingModule
+    IonicModule.forRoot(),
+    FormsModule,    
+    PagesPageRoutingModule,
+    IonicStorageModule.forRoot({      
+      driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+    })
   ],
-  declarations: [PagesPage]
+  declarations: [PagesPage]  
 })
 export class PagesPageModule {}
