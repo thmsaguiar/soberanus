@@ -20,6 +20,8 @@ export class InitialPage implements OnInit {
 
   venda: Venda = new Venda();
 
+  public produtosVenda: Product [] = [];
+
   public vTotal: ITotal = {
     totalPrice: 0
   };
@@ -80,13 +82,13 @@ export class InitialPage implements OnInit {
   }
 
   aumentar(product: Product, total: ITotal): void {
-    product.quantidade++;
+    product.quantidade = product.quantidade+1;    
     total.totalPrice += product.price;
   }
 
   diminuir(product: Product, total: ITotal): void {
     if(product.quantidade > 0) {
-      product.quantidade--;
+      product.quantidade = product.quantidade-1;
       if( total.totalPrice > 0){
         total.totalPrice -= product.price;
       }
@@ -99,7 +101,7 @@ export class InitialPage implements OnInit {
       this.vTotal.totalPrice = 0;  
       for(var i = 0; i < this.products.length; i++){
         this.products[i].quantidade = 0;
-      }   
+      }  
       const alert = await this.alertCtrl.create({
         header: 'Efetue o pagamento!',
         buttons:['OK']
@@ -109,10 +111,16 @@ export class InitialPage implements OnInit {
   }
 
   async criarVenda(){
+    var qtd = 0;    
+    for(let i of this.products){
+      if(i.quantidade != 0){           
+        this.produtosVenda.push(i);
+      }
+    }    
     var data = new Date();
     var random = Math.floor(Math.random() * 999);
     this.venda.id = random+"V";
-    this.venda.produtos = this.products;
+    this.venda.produtos = this.produtosVenda;
     this.venda.total = this.vTotal.totalPrice;
     this.venda.data = data;
 

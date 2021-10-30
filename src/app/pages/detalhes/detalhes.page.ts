@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { Product } from 'src/app/models/Product';
 import { Venda } from 'src/app/models/Venda';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
-  selector: 'app-record',
-  templateUrl: './record.page.html',
-  styleUrls: ['./record.page.scss'],
+  selector: 'app-detalhes',
+  templateUrl: './detalhes.page.html',
+  styleUrls: ['./detalhes.page.scss'],
 })
-export class RecordPage implements OnInit {
+export class DetalhesPage implements OnInit {
 
   listaVendas: Venda[] = [];
 
-  constructor(private storageService: StorageService, public router:Router){}
+  //venda: Venda = new Venda();
+
+  constructor(private storageService: StorageService){}
   
-  async buscarVendas(){
-    this.listaVendas = await this.storageService.getAll();  
+  async buscarVendas(){    
+    this.listaVendas = await this.storageService.getAll();     
   }
 
   ionViewDidEnter(){
@@ -37,10 +38,6 @@ export class RecordPage implements OnInit {
     var min = data.getMinutes();
     var dataAtual = dia + '/' + mes + '/' + ano+'   Hora: '+hora+':'+min;
     return dataAtual;
-  }
-
-  comprovante(id: string){
-    this.router.navigateByUrl('/pages/detalhes');
   }
 
   ngOnInit() {

@@ -15,9 +15,13 @@ const routes: Routes = [
       {
         path: 'record',
         loadChildren: () => import('./record/record.module').then( m => m.RecordPageModule)
+      },
+      {
+        path: 'detalhes',
+        loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
       }
     ]
-  }  
+  } 
 ];
 
 @NgModule({

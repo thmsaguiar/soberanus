@@ -1,0 +1,33 @@
+<ion-header class="header">
+  <div class="header__content">
+    <h1 class="header__title"><ion-icon class="header__logo" name="receipt"></ion-icon> Comprovante </h1>    
+  </div>  
+  <style>
+    @import url('http://fonts.cdnfonts.com/css/billion-dreams');
+  </style>              
+</ion-header>
+<ion-content>
+  <div id="container"> 
+    <ion-grid class="container">      
+      <ion-row *ngFor="let venda of listaVendas">                          
+        <ion-col *ngIf="venda.id != null">
+          <h1>{{venda.id}}</h1>
+          <p>{{gerarData(venda.data)}}</p>         
+          <div class="card">            
+            <ion-card-content>            
+              <ion-row><ion-col>Produto</ion-col><ion-col>Quantidade</ion-col><ion-col>Preço</ion-col></ion-row>                
+              <ion-row *ngFor="let product of venda.produtos">
+                <ion-col>{{product.name}}</ion-col>
+                <ion-col>{{product.quantidade}}</ion-col>
+                <ion-col>R${{product.price}}</ion-col>
+              </ion-row>
+            </ion-card-content>
+          </div>            
+          <div>
+            <h2>Total: R${{venda.total}}</h2>
+          </div>
+        </ion-col>        
+      </ion-row>
+    </ion-grid>    
+  </div>
+</ion-content>

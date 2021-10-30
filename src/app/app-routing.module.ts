@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     /*Inicia app na home*/
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'pages/detalhes',
     pathMatch: 'full'
   },
   {
