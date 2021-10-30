@@ -20,6 +20,8 @@ export class InitialPage implements OnInit {
 
   venda: Venda = new Venda();
 
+  public id: string;
+
   public produtosVenda: Product [] = [];
 
   public vTotal: ITotal = {
@@ -78,52 +80,53 @@ export class InitialPage implements OnInit {
 
   constructor(public router:Router, private alertCtrl: AlertController, private storageService: StorageService) {}
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   aumentar(product: Product, total: ITotal): void {
-    product.quantidade = product.quantidade+1;    
+    product.quantidade++;    
     total.totalPrice += product.price;
   }
 
   diminuir(product: Product, total: ITotal): void {
-    if(product.quantidade > 0) {
-      product.quantidade = product.quantidade-1;
+    if(product.quantidade > 0) {      
+      product.quantidade--;
       if( total.totalPrice > 0){
         total.totalPrice -= product.price;
       }
     }
   }
 
-  async finish(){        
-    if(this.vTotal.totalPrice != 0){
-      this.criarVenda();
-      this.vTotal.totalPrice = 0;  
-      for(var i = 0; i < this.products.length; i++){
-        this.products[i].quantidade = 0;
+  async finish(){      
+    for(let iv of this.produtosVenda){
+      if(iv.quantidade != 0){           
+        this.produtosVenda.splice(this.produtosVenda.indexOf(iv));
       }  
+    }    
+    if(this.vTotal.totalPrice != 0){
+      this.criarVenda();      
       const alert = await this.alertCtrl.create({
         header: 'Efetue o pagamento!',
         buttons:['OK']
       });
-      alert.present();  
-    }                
+      alert.present();       
+      this.router.navigateByUrl('/pages/detalhes/'+this.id);      
+    }                    
   }
 
-  async criarVenda(){
-    var qtd = 0;    
+  async criarVenda(){        
     for(let i of this.products){
-      if(i.quantidade != 0){           
+      if(i.quantidade > 0){           
         this.produtosVenda.push(i);
-      }
-    }    
+      }      
+    }
     var data = new Date();
     var random = Math.floor(Math.random() * 999);
     this.venda.id = random+"V";
     this.venda.produtos = this.produtosVenda;
     this.venda.total = this.vTotal.totalPrice;
     this.venda.data = data;
-
+    this.id = this.venda.id;
     await this.storageService.set(this.venda.id, this.venda);  
     
   }

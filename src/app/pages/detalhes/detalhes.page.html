@@ -6,11 +6,11 @@
     @import url('http://fonts.cdnfonts.com/css/billion-dreams');
   </style>              
 </ion-header>
-<ion-content>
+<ion-content>  
   <div id="container"> 
     <ion-grid class="container">      
       <ion-row *ngFor="let venda of listaVendas">                          
-        <ion-col *ngIf="venda.id != null">
+        <ion-col *ngIf="venda.id != null && venda.id == id">
           <h1>{{venda.id}}</h1>
           <p>{{gerarData(venda.data)}}</p>         
           <div class="card">            

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { Product } from 'src/app/models/Product';
 import { Venda } from 'src/app/models/Venda';
@@ -14,7 +14,7 @@ export class RecordPage implements OnInit {
 
   listaVendas: Venda[] = [];
 
-  constructor(private storageService: StorageService, public router:Router){}
+  constructor(private storageService: StorageService, public router: ActivatedRoute){}
   
   async buscarVendas(){
     this.listaVendas = await this.storageService.getAll();  
@@ -40,7 +40,7 @@ export class RecordPage implements OnInit {
   }
 
   comprovante(id: string){
-    this.router.navigateByUrl('/pages/detalhes');
+    //this.router.navigateByUrl('/pages/detalhes/'+id);
   }
 
   ngOnInit() {

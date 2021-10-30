@@ -17,7 +17,7 @@ const routes: Routes = [
         loadChildren: () => import('./record/record.module').then( m => m.RecordPageModule)
       },
       {
-        path: 'detalhes',
+        path: 'detalhes/:id',
         loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
       }
     ]
