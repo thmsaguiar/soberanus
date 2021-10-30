@@ -21,6 +21,7 @@ interface ITotal {
 })
 
 export class InitialPage implements OnInit {
+
   public vTotal: ITotal = {
     totalPrice: 0
   };

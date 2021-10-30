@@ -17,7 +17,7 @@ const routes: Routes = [
         loadChildren: () => import('./record/record.module').then( m => m.RecordPageModule)
       }
     ]
-  }
+  }  
 ];
 
 @NgModule({
