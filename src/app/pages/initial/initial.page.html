@@ -8,48 +8,50 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h2 class="subtitle">Faça o seu pedido:</h2>
+  <h2 class="subtitle py-3">Faça o seu pedido:</h2>
   <ion-grid class="container">
-    <ion-row *ngFor="let product of products">
-      <ion-col>
-        <div class="card bg-dark">
-          <ion-card-header>
-            <ion-card-title class="card__title">
-              {{product.name}}
-            </ion-card-title>
-          </ion-card-header>
+    <div class="card bg-dark">
+      <ion-row *ngFor="let product of products">
+        <ion-col>
+          <div class="bg-dark py-2">
+            <ion-card-header>
+              <ion-card-title class="card__title">
+                {{product.name}}
+              </ion-card-title>
+            </ion-card-header>
 
-          <ion-card-content class="card__description">
-            <label>
-              {{product.description}}
-            </label>
-            <ion-card-title class="card__price">
-              Valor: R${{product.price}}
-            </ion-card-title>
-          </ion-card-content>
+            <ion-card-content class="card__description">
+              <label>
+                {{product.description}}
+              </label>
+              <ion-card-title class="card__price">
+                Valor: R${{product.price}}
+              </ion-card-title>
+            </ion-card-content>
 
-          <ion-footer class="card__footer">
-            <ion-row class="card__row">
-              <ion-col>
-                <ion-button color="danger" (click)="diminuir(product,vTotal)" class="card__button">
-                  <ion-icon name="remove-outline"></ion-icon>
-                </ion-button>
-              </ion-col>
-              <ion-col>
-                <ion-card-title class="card__qnt">
-                  {{product.quantidade}}
-                </ion-card-title>
-              </ion-col>
-              <ion-col>
-                <ion-button color="success" (click)="aumentar(product,vTotal)" class="card__button">
-                  <ion-icon name="add-outline"></ion-icon>
-                </ion-button>
-              </ion-col>
-            </ion-row>
-          </ion-footer>          
-        </div>
-      </ion-col>
-    </ion-row>
+            <ion-footer class="card__footer">
+              <ion-row class="card__row">
+                <ion-col>
+                  <ion-button color="danger" (click)="diminuir(product,vTotal)" class="card__button">
+                    <ion-icon name="remove-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col>
+                  <ion-card-title class="card__qnt">
+                    {{product.quantidade}}
+                  </ion-card-title>
+                </ion-col>
+                <ion-col>
+                  <ion-button color="success" (click)="aumentar(product,vTotal)" class="card__button">
+                    <ion-icon name="add-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-footer>                    
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-grid>
 </ion-content>
 
