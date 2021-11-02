@@ -7,8 +7,8 @@
   </style>
 </ion-header>
 <ion-content>
-  <ion-item-sliding *ngFor="let venda of listaVendas">
-    <ion-item *ngIf="venda.id != null">
+  <ion-item-sliding *ngFor="let venda of listaVendas">    
+    <ion-item *ngIf="venda.id != null">            
       <ion-label>
         <div><h1>{{venda.id}}</h1><h2>Data: {{gerarData(venda.data)}}</h2><h2>Total Venda: R$ {{venda.total}}</h2></div>
       </ion-label>
@@ -22,5 +22,5 @@
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-item-option>      
     </ion-item-options>
-  </ion-item-sliding>
+  </ion-item-sliding>  
 </ion-content>

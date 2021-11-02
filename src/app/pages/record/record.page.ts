@@ -17,7 +17,7 @@ export class RecordPage implements OnInit {
   constructor(private storageService: StorageService, public router: ActivatedRoute){}
   
   async buscarVendas(){
-    this.listaVendas = await this.storageService.getAll();  
+    this.listaVendas = await this.storageService.getAll();    
   }
 
   ionViewDidEnter(){
@@ -29,7 +29,7 @@ export class RecordPage implements OnInit {
     this.buscarVendas();
   }  
 
-  gerarData(data: Date){
+  gerarData(data: Date){        
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
     var ano = data.getFullYear();
@@ -39,11 +39,7 @@ export class RecordPage implements OnInit {
     return dataAtual;
   }
 
-  comprovante(id: string){
-    //this.router.navigateByUrl('/pages/detalhes/'+id);
-  }
-
-  ngOnInit() {
+  ngOnInit() {    
   }
 
 }
