@@ -36,7 +36,15 @@ export class InitialPage implements OnInit {
     this.criarProdutos();
   }
 
-  aumentar(product: Product, total: ITotal): void {
+  async aumentar(product: Product, total: ITotal): Promise<void> {
+    if(product.quantidade == 0 && product.name =='03. Cerveja') {
+      const alert = await this.alertCtrl.create({
+        header: 'Bebidas alcóolicas apenas para maiores de 18 anos',
+        buttons: ['OK']
+      });
+      alert.present();
+      }
+    
     product.quantidade++;    
     total.totalPrice += product.price;
   }
