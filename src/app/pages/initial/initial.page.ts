@@ -22,47 +22,48 @@ export class InitialPage implements OnInit {
 
   public id: string;
 
-  public produtosVenda: Product [] = [];
+  public produtosVenda: Product[] = [];
 
   public vTotal: ITotal = {
     totalPrice: 0
   };
 
-  public products: Product [];
+  public products: Product[];
 
-  constructor(public router:Router, private alertCtrl: AlertController, private storageService: StorageService) {}
+  constructor(public router: Router, private alertCtrl: AlertController, private storageService: StorageService) { }
 
-  ngOnInit() {    
+  ngOnInit() {
     this.criarProdutos();
   }
 
   async aumentar(product: Product, total: ITotal): Promise<void> {
-    if(product.quantidade == 0 && product.name =='03. Cerveja') {
+    // eslint-disable-next-line eqeqeq
+    if (product.quantidade == 0 && product.name == '03. Cerveja') {
       const alert = await this.alertCtrl.create({
         header: 'Bebidas alcóolicas apenas para maiores de 18 anos',
         buttons: ['OK']
       });
       alert.present();
-      }
-    
-    product.quantidade++;    
+    }
+
+    product.quantidade++;
     total.totalPrice += product.price;
   }
 
   diminuir(product: Product, total: ITotal): void {
-    if(product.quantidade > 0) {      
+    if (product.quantidade > 0) {
       product.quantidade--;
-      if( total.totalPrice > 0){
+      if (total.totalPrice > 0) {
         total.totalPrice -= product.price;
       }
     }
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.criarProdutos();
   }
 
-  criarProdutos(){
+  criarProdutos() {
     this.products = [{
       name: '01. Hot-Dog',
       description: 'Salsicha viena, batata palha, cheddar, farofa de bacon catchup e mostarda.',
@@ -111,42 +112,44 @@ export class InitialPage implements OnInit {
       price: 5,
       quantidade: 0
     }
-  ];    
+    ];
   }
 
-  async finish(){      
-    for(let iv of this.produtosVenda){
-      if(iv.quantidade != 0){           
+  async finish() {
+    for (const iv of this.produtosVenda) {
+      // eslint-disable-next-line eqeqeq
+      if (iv.quantidade != 0) {
         this.produtosVenda.splice(this.produtosVenda.indexOf(iv));
-      }        
-    }    
-    if(this.vTotal.totalPrice != 0){
-      this.criarVenda();      
+      }
+    }
+    // eslint-disable-next-line eqeqeq
+    if (this.vTotal.totalPrice != 0) {
+      this.criarVenda();
       const alert = await this.alertCtrl.create({
         header: 'Efetue o pagamento!',
-        buttons:['OK']
+        buttons: ['OK']
       });
-      alert.present();             
-      this.router.navigateByUrl('/pages/detalhes/'+this.id);      
-    }                    
+      alert.present();
+      this.router.navigateByUrl('/pages/detalhes/' + this.id);
+    }
     this.vTotal.totalPrice = 0;
   }
 
-  async criarVenda(){        
-    for(let i of this.products){
-      if(i.quantidade > 0){           
+  async criarVenda() {
+    for (const i of this.products) {
+      if (i.quantidade > 0) {
         this.produtosVenda.push(i);
-      }      
+      }
     }
-    var data = new Date();
-    var random = Math.floor(Math.random() * 999);
-    this.venda.id = random+"V";
+    const data = new Date();
+    const random = Math.floor(Math.random() * 999);
+    this.venda.id = random + 'V';
     this.venda.produtos = this.produtosVenda;
     this.venda.total = this.vTotal.totalPrice;
     this.venda.data = data;
     this.id = this.venda.id;
-    await this.storageService.set(this.venda.id, this.venda);  
-    
+    await this.storageService.set(this.venda.id, this.venda);
+
   }
 
 }

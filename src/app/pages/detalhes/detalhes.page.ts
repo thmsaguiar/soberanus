@@ -15,35 +15,44 @@ export class DetalhesPage implements OnInit {
   public id: string;
 
   public rota: ActivatedRoute;
-  
+
   listaVendas: Venda[] = [];
 
   venda: Venda = new Venda();
 
-  constructor(private storageService: StorageService, router: ActivatedRoute){
+  public srcqrcode: string;
+
+  constructor(private storageService: StorageService, router: ActivatedRoute) {
     this.rota = router;
   }
-  
-  async buscarVendas(){    
-    this.listaVendas = await this.storageService.getAll();     
+
+  async buscarVendas() {
+    this.listaVendas = await this.storageService.getAll();
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.buscarVendas();
+    this.gerarQrCode();
   }
 
-  gerarData(data: Date){
-    var dia = String(data.getDate()).padStart(2, '0');
-    var mes = String(data.getMonth() + 1).padStart(2, '0');
-    var ano = data.getFullYear();
-    var hora = data.getHours();
-    var min = data.getMinutes();
-    var dataAtual = dia + '/' + mes + '/' + ano+'   Hora: '+hora+':'+min;
+  gerarData(data: Date) {
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = data.getFullYear();
+    const hora = data.getHours();
+    const min = data.getMinutes();
+    const dataAtual = dia + '/' + mes + '/' + ano + '   Hora: ' + hora + ':' + min;
     return dataAtual;
   }
 
+  gerarQrCode() {
+    const conteudo = 'https://forms.gle/F8GNDSuekLubj8YJ7';
+    const googleApiURL = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=';
+    this.srcqrcode = googleApiURL + conteudo;
+  }
+
   ngOnInit() {
-    this.id = this.rota.snapshot.paramMap.get('id');    
+    this.id = this.rota.snapshot.paramMap.get('id');
   }
 
 }

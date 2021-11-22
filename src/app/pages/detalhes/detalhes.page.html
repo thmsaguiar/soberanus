@@ -1,41 +1,53 @@
 <ion-header class="header">
   <div class="header__content">
-    <h1 class="header__title text-white"><ion-icon class="header__logo" name="receipt"></ion-icon> Comprovante </h1>    
-  </div>  
+    <h1 class="header__title text-white">
+      <ion-icon class="header__logo" name="receipt"></ion-icon> Comprovante
+    </h1>
+  </div>
   <style>
     @import url('http://fonts.cdnfonts.com/css/billion-dreams');
-  </style>              
+  </style>
 </ion-header>
-<ion-content>  
-  <div id="container"> 
-    <ion-grid class="container">      
-      <ion-row *ngFor="let venda of listaVendas">                          
-        <ion-col *ngIf="venda.id != null && venda.id == id">
-          <h1 class="text-fnt text-center">Detalhes da Venda</h1> 
-          <hr>         
+<ion-content>
+  <div id="container">
+    <ion-grid class="container">
+      <ion-row *ngFor="let venda of listaVendas">
+        <ion-col *ngIf="venda.id !== null && venda.id === id">
+          <h1 class="text-fnt text-center">Detalhes da Venda</h1>
+          <hr>
           <div class="card py-3 bg-dark">
-            <div class="container">                            
+            <div class="container">
               <h5>Código: {{venda.id}}</h5>
-              <h5>Data: {{gerarData(venda.data)}}</h5>  
+              <h5>Data: {{gerarData(venda.data)}}</h5>
             </div>
-          </div>                 
+          </div>
+          <hr>
           <h1 class="text-fnt text-center">Itens</h1>
           <hr>
           <ul class="list-group mb-3 py-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed bg-dark" *ngFor="let product of venda.produtos">
+            <li class="list-group-item d-flex justify-content-between lh-condensed bg-dark"
+              *ngFor="let product of venda.produtos">
               <div>
                 <h6 class="my-0 text-white">{{product.name}}</h6>
                 <small class="text-white">Quantidade: {{product.quantidade}}</small>
               </div>
               <span class="text-white">R${{product.price}}</span>
-            </li>            
+            </li>
             <li class="list-group-item d-flex justify-content-between bg-warning">
-              <span>Total:</span>              
+              <span>Total:</span>
               <strong>R${{venda.total}}</strong>
             </li>
-          </ul>              
-        </ion-col>        
+          </ul>
+          <hr>
+          <div class="qrcode">
+            <div class="card py-3 bg-ligth">
+              <div class="container">
+                <ion-img src="{{srcqrcode}}"></ion-img>
+              </div>
+            </div>
+          </div>
+        </ion-col>
       </ion-row>
-    </ion-grid>      
+    </ion-grid>
   </div>
 </ion-content>
