@@ -78,7 +78,7 @@ export class InitialPage implements OnInit {
     },
     {
       name: '03. X-Bacon',
-      description: 'Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelizada.'
+      description: 'Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelizada.',
       price: 14,
       quantidade: 0
     },
