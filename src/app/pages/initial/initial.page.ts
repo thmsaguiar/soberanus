@@ -40,7 +40,7 @@ export class InitialPage implements OnInit {
     // eslint-disable-next-line eqeqeq
     if (product.quantidade == 0 && product.name == '03. Cerveja') {
       const alert = await this.alertCtrl.create({
-        header: 'Bebidas alcóolicas apenas para maiores de 18 anos',
+        header: 'Bebidas alcóolicas apenas para maiores de 18 anos.',
         buttons: ['OK']
       });
       alert.present();
@@ -66,7 +66,7 @@ export class InitialPage implements OnInit {
   criarProdutos() {
     this.products = [{
       name: '01. Hot-Dog',
-      description: 'Salsicha viena, batata palha, cheddar, farofa de bacon catchup e mostarda.',
+      description: 'Salsicha viena, batata palha, cheddar, farofa de bacon, ketchup e mostarda.',
       price: 10,
       quantidade: 0
     },
@@ -78,7 +78,7 @@ export class InitialPage implements OnInit {
     },
     {
       name: '03. X-Bacon',
-      description: 'Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelisada.',
+      description: 'Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelizada.'
       price: 14,
       quantidade: 0
     },
@@ -90,7 +90,7 @@ export class InitialPage implements OnInit {
     },
     {
       name: '05. X-Vegan',
-      description: 'Burger falafel, queijo de mandioca, rucula, tomate cereja e molho especial vegano.',
+      description: 'Burger falafel, queijo de mandioca, rúcula, tomate cereja e molho especial vegano.',
       price: 16,
       quantidade: 0
     },
