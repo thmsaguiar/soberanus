@@ -30,7 +30,14 @@ export class InitialPage implements OnInit {
 
   public products: Product[];
 
-  constructor(public router: Router, private alertCtrl: AlertController, private storageService: StorageService) { }
+  public produtosApi;
+
+  public url = 'http://localhost:3000/products';
+
+  constructor(
+    public router: Router,
+    private alertCtrl: AlertController,
+    private storageService: StorageService) { }
 
   ngOnInit() {
     this.criarProdutos();
@@ -149,7 +156,6 @@ export class InitialPage implements OnInit {
     this.venda.data = data;
     this.id = this.venda.id;
     await this.storageService.set(this.venda.id, this.venda);
-
   }
 
 }
