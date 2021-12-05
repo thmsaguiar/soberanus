@@ -10,6 +10,13 @@ interface ITotal {
   totalPrice: number;
 }
 
+interface IProduto{
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+}
+
 @Component({
   selector: 'app-initial',
   templateUrl: './initial.page.html',
@@ -18,9 +25,15 @@ interface ITotal {
 
 export class InitialPage implements OnInit {
 
-  venda: Venda = new Venda();
+  public venda: Venda = new Venda();
+
+  public url = 'http://localhost:3000/products';
 
   public id: string;
+
+  public name: string;
+  public description: string;
+  public price: number;
 
   public produtosVenda: Product[] = [];
 
@@ -30,9 +43,7 @@ export class InitialPage implements OnInit {
 
   public products: Product[];
 
-  public produtosApi;
-
-  public url = 'http://localhost:3000/products';
+  public produtosApi: IProduto[] = [];
 
   constructor(
     public router: Router,
@@ -67,7 +78,8 @@ export class InitialPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.criarProdutos();
+    //this.criarProdutos();
+    this.buscar();
   }
 
   criarProdutos() {
@@ -156,6 +168,49 @@ export class InitialPage implements OnInit {
     this.venda.data = data;
     this.id = this.venda.id;
     await this.storageService.set(this.venda.id, this.venda);
+  }
+
+
+  async salvar(): Promise<void> {
+    const novo = {
+      name: this.name,
+      description: this.description,
+      price: this.price
+    };
+
+    console.log(Object.keys(novo));
+
+    const body = Object.keys(novo)
+      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(novo[k])}`)
+      .join('&');
+
+    await fetch(this.url, { method: 'POST', body: new URLSearchParams(body) });
+    this.buscar();
+  }
+
+  async buscar(): Promise<void> {
+    const resposta = await fetch(this.url);
+    this.produtosApi = await resposta.json();
+  }
+
+  async atualizar(id: number): Promise<void> {
+    const produtoAtualizado = {
+      name: this.name,
+      description: this.description,
+      price: this.price
+    };
+
+    const body = Object.keys(produtoAtualizado)
+      .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(produtoAtualizado[k])}`)
+      .join('&');
+
+    await fetch(`${this.url}/${id}`, { method: 'PUT', body: new URLSearchParams(body) });
+    this.buscar();
+  }
+
+  async remover(id: number): Promise<void> {
+    await fetch(`${this.url}/${id}`, { method: 'DELETE' });
+    this.buscar();
   }
 
 }

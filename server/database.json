@@ -1,52 +1,58 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Hot-Dog",
-            "description": "Salsicha viena, batata palha, cheddar, farofa de bacon, ketchup e mostarda.",
-            "price": 10.00
-        },
-        {
-            "id": 2,
-            "name": "X-Salada",
-            "description": "Burger 120g angus, american cheese, picles, alface americano, tomate e molho especial.",
-            "price": 12.00
-        },
-        {
-            "id": 3,
-            "name": "X-Bacon",
-            "description": "Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelizada.",
-            "price": 14.00
-        },
-        {
-            "id": 4,
-            "name": "X-Tudo",
-            "description": "Burger 120g angus, bacon, presunto, 4 queijos, ovo, picles, alface americano, tomate e molho especial.",
-            "price": 18.00
-        },
-        {
-            "id": 5,
-            "name": "X-Vegan",
-            "description": "Burger falafel, queijo de mandioca, rúcula, tomate cereja e molho especial vegano.",
-            "price": 16.00
-        },
-        {
-            "id": 6,
-            "name": "Coca-Cola",
-            "description": "Garrafa de vidro 250ml.",
-            "price": 6.00
-        },
-        {
-            "id": 7,
-            "name": "Suco Natural",
-            "description": "Laranja, abacaxi, morango, maracuja, limão, etc.",
-            "price": 7.00
-        },
-        {
-            "id": 8,
-            "name": "Cerveja",
-            "description": "Skol, Brahma, Itaipava, Heineken, etc.",
-            "price": 5.00
-        }
-    ]
+  "products": [
+    {
+      "name": "teste nome",
+      "description": "teste descricao",
+      "price": "0",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "X-Bacon",
+      "description": "Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelizada.",
+      "price": 14
+    },
+    {
+      "id": 4,
+      "name": "X-Tudo",
+      "description": "Burger 120g angus, bacon, presunto, 4 queijos, ovo, picles, alface americano, tomate e molho especial.",
+      "price": 18
+    },
+    {
+      "id": 5,
+      "name": "X-Vegan",
+      "description": "Burger falafel, queijo de mandioca, rúcula, tomate cereja e molho especial vegano.",
+      "price": 16
+    },
+    {
+      "id": 6,
+      "name": "Coca-Cola",
+      "description": "Garrafa de vidro 250ml.",
+      "price": 6
+    },
+    {
+      "id": 7,
+      "name": "Suco Natural",
+      "description": "Laranja, abacaxi, morango, maracuja, limão, etc.",
+      "price": 7
+    },
+    {
+      "id": 8,
+      "name": "Cerveja",
+      "description": "Skol, Brahma, Itaipava, Heineken, etc.",
+      "price": 5
+    },
+    {
+      "name": "teste novo",
+      "description": "teste novo",
+      "price": "10",
+      "id": 9
+    },
+    {
+      "name": "teste novo",
+      "description": "teste novo",
+      "price": "10",
+      "id": 10
+    }
+  ]
 }
