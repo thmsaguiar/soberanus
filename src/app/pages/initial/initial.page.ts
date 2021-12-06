@@ -70,14 +70,14 @@ export class InitialPage implements OnInit {
     }
 
     product.quantidade++;
-    total.totalPrice += product.price;
+    total.totalPrice += Number(product.price);
   }
 
   diminuir(product: IProduto, total: ITotal): void {
     if (product.quantidade > 0) {
       product.quantidade--;
       if (total.totalPrice > 0) {
-        total.totalPrice -= product.price;
+        total.totalPrice -= Number(product.price);
       }
     }
   }
@@ -97,7 +97,7 @@ export class InitialPage implements OnInit {
     if (this.vTotal.totalPrice != 0) {
       this.criarVenda();
       const alert = await this.alertCtrl.create({
-        header: 'Efetue o pagamento!',
+        header: 'Venda Finalizada!',
         buttons: ['OK']
       });
       alert.present();
