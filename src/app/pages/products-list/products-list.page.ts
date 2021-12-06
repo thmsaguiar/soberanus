@@ -50,7 +50,7 @@ export class ProductsListPage implements OnInit {
   }
 
   novo(){
-    this.route.navigateByUrl('/pages/initial');
+    this.route.navigateByUrl('/pages/cadastrar-produto');
   }
 
 }
