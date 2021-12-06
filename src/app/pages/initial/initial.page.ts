@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
-import { Product } from 'src/app/models/Product';
 import { Venda } from 'src/app/models/Venda';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -15,6 +14,7 @@ interface IProduto{
   name: string;
   description: string;
   price: number;
+  quantidade: number;
 }
 
 @Component({
@@ -34,16 +34,17 @@ export class InitialPage implements OnInit {
   public name: string;
   public description: string;
   public price: number;
-
-  public produtosVenda: Product[] = [];
+  public quantidade: number;
 
   public vTotal: ITotal = {
     totalPrice: 0
   };
 
-  public products: Product[];
+  public products: IProduto[] = [];
 
   public produtosApi: IProduto[] = [];
+
+  public produtosVenda: IProduto[] = [];
 
   constructor(
     public router: Router,
@@ -54,7 +55,11 @@ export class InitialPage implements OnInit {
     this.criarProdutos();
   }
 
-  async aumentar(product: Product, total: ITotal): Promise<void> {
+  ionViewDidEnter() {
+    this.buscar();
+  }
+
+  async aumentar(product: IProduto, total: ITotal): Promise<void> {
     // eslint-disable-next-line eqeqeq
     if (product.quantidade == 0 && product.name == '03. Cerveja') {
       const alert = await this.alertCtrl.create({
@@ -68,7 +73,7 @@ export class InitialPage implements OnInit {
     total.totalPrice += product.price;
   }
 
-  diminuir(product: Product, total: ITotal): void {
+  diminuir(product: IProduto, total: ITotal): void {
     if (product.quantidade > 0) {
       product.quantidade--;
       if (total.totalPrice > 0) {
@@ -77,61 +82,8 @@ export class InitialPage implements OnInit {
     }
   }
 
-  ionViewDidEnter() {
-    //this.criarProdutos();
-    this.buscar();
-  }
-
   criarProdutos() {
-    this.products = [{
-      name: '01. Hot-Dog',
-      description: 'Salsicha viena, batata palha, cheddar, farofa de bacon, ketchup e mostarda.',
-      price: 10,
-      quantidade: 0
-    },
-    {
-      name: '02. X-Salada',
-      description: 'Burger 120g angus, american cheese, picles, alface americano, tomate e molho especial.',
-      price: 12,
-      quantidade: 0
-    },
-    {
-      name: '03. X-Bacon',
-      description: 'Burger 120g angus, american cheese, fatias de bacon crocantes e cebola caramelizada.',
-      price: 14,
-      quantidade: 0
-    },
-    {
-      name: '04. X-Tudo',
-      description: 'Burger 120g angus, bacon, presunto, 4 queijos, ovo, picles, alface americano, tomate e molho especial.',
-      price: 18,
-      quantidade: 0
-    },
-    {
-      name: '05. X-Vegan',
-      description: 'Burger falafel, queijo de mandioca, rúcula, tomate cereja e molho especial vegano.',
-      price: 16,
-      quantidade: 0
-    },
-    {
-      name: '01. Coca-Cola',
-      description: 'Garrafa de vidro 250ml.',
-      price: 6,
-      quantidade: 0
-    },
-    {
-      name: '02. Suco Natural',
-      description: 'Laranja, abacaxi, morango, maracuja, limão, etc.',
-      price: 7,
-      quantidade: 0
-    },
-    {
-      name: '03. Cerveja',
-      description: 'Skol, Brahma, Itaipava, Heineken, etc.',
-      price: 5,
-      quantidade: 0
-    }
-    ];
+    this.products = this.produtosApi;
   }
 
   async finish() {
@@ -170,12 +122,12 @@ export class InitialPage implements OnInit {
     await this.storageService.set(this.venda.id, this.venda);
   }
 
-
   async salvar(): Promise<void> {
     const novo = {
       name: this.name,
       description: this.description,
-      price: this.price
+      price: this.price,
+      quantidade: this.quantidade
     };
 
     console.log(Object.keys(novo));
@@ -191,13 +143,15 @@ export class InitialPage implements OnInit {
   async buscar(): Promise<void> {
     const resposta = await fetch(this.url);
     this.produtosApi = await resposta.json();
+    this.products = await this.produtosApi;
   }
 
   async atualizar(id: number): Promise<void> {
     const produtoAtualizado = {
       name: this.name,
       description: this.description,
-      price: this.price
+      price: this.price,
+      quantidade: this.quantidade
     };
 
     const body = Object.keys(produtoAtualizado)
