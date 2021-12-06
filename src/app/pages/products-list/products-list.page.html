@@ -7,6 +7,8 @@
   </style>
 </ion-header>
 <ion-content>
+  <ion-button class="btn-login" color="success" shape="round" (click)="novo()" >Novo Produto</ion-button>
+  <h1 class="text-fnt text-center">Lista</h1>
   <ion-item-sliding *ngFor="let produto of produtosApi">    
     <ion-item>            
       <ion-label>

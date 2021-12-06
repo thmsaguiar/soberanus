@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 interface IProduto{
@@ -28,7 +28,7 @@ export class ProductsListPage implements OnInit {
 
   public produtosApi: IProduto[] = [];
 
-  constructor(public router: ActivatedRoute,private alertCtrl: AlertController){}
+  constructor(public router: ActivatedRoute, public route: Router, private alertCtrl: AlertController){}
 
 
   ionViewDidEnter(){
@@ -49,5 +49,8 @@ export class ProductsListPage implements OnInit {
     this.buscar();
   }
 
+  novo(){
+    this.route.navigateByUrl('/pages/initial');
+  }
 
 }
