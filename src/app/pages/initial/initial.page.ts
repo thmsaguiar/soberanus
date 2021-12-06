@@ -61,7 +61,7 @@ export class InitialPage implements OnInit {
 
   async aumentar(product: IProduto, total: ITotal): Promise<void> {
     // eslint-disable-next-line eqeqeq
-    if (product.quantidade == 0 && product.name == '03. Cerveja') {
+    if (product.quantidade == 0 && product.name == 'Cerveja') {
       const alert = await this.alertCtrl.create({
         header: 'Bebidas alcóolicas apenas para maiores de 18 anos.',
         buttons: ['OK']
