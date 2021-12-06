@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 })
 export class PagesPage implements OnInit {
 
-  constructor(private alertCtrl: AlertController, public router:Router) { }
+  constructor(private alertCtrl: AlertController, public router: Router) { }
 
   ngOnInit() {
   }
 
-  async exit(){            
+  async exit(){
     const alert = await this.alertCtrl.create({
       header: 'Finalizando sessão!',
       message: 'Deseja realmente sair?',
       buttons: [
       {
         text: 'Não',
-        role: 'cancel'        
+        role: 'cancel'
       },
       {
         text: 'Sim',
@@ -31,8 +31,7 @@ export class PagesPage implements OnInit {
       }
     ]
     });
-    alert.present();    
-    
+    alert.present();
   }
 
 }

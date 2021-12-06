@@ -1,18 +1,18 @@
 {
   "products": [
     {
-      "id": 1,
       "name": "Hot-Dog",
-      "description": "Salsicha viena, batata palha, cheddar, farofa de bacon, ketchup e mostarda.",
-      "price": 10,
-      "quantidade": 0
+      "description": "Salsicha viena, batata palha, cheddar, farofa de bacon, ketchup, barbecue e mostarda.",
+      "price": "10",
+      "quantidade": "0",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "X-Salada",
       "description": "Burger 120g angus, american cheese, picles, alface americano, tomate e molho especial.",
-      "price": 12,
-      "quantidade": 0
+      "price": "12",
+      "quantidade": "0",
+      "id": 2
     },
     {
       "id": 3,

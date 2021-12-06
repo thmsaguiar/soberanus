@@ -1,0 +1,29 @@
+<ion-header class="header">
+  <div class="header__content">
+    <h1 class="header__title text-white">
+      <ion-icon class="header__logo" name="receipt"></ion-icon> Atualizar
+    </h1>
+  </div>
+  <style>
+    @import url('http://fonts.cdnfonts.com/css/billion-dreams');
+  </style>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <ion-list>
+      <ion-item>
+        <ion-label>Nome: </ion-label>
+        <ion-input name="name" [(ngModel)]="name" placeholder="Nome" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Descrição: </ion-label>
+        <ion-textarea name="description" [(ngModel)]="description" placeholder="Descrição" type="text"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Preço: </ion-label>
+        <ion-input name="price" [(ngModel)]="price" placeholder="Preço" type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button class="btn-login" color="warning" shape="round" (click)="atualizar(id)">Salvar</ion-button>          
+  </div>
+</ion-content>
