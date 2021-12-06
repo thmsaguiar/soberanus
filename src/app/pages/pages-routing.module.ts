@@ -27,6 +27,10 @@ const routes: Routes = [
       {
         path: 'atualizar-produto/:id',
         loadChildren: () => import('./atualizar-produto/atualizar-produto.module').then( m => m.AtualizarProdutoPageModule)
+      },
+      {
+        path: 'cadastrar-produto',
+        loadChildren: () => import('./cadastrar-produto/cadastrar-produto.module').then( m => m.CadastrarProdutoPageModule)
       }
     ]
   }

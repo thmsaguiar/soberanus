@@ -55,6 +55,13 @@
       "description": "Skol, Brahma, Itaipava, Heineken, etc.",
       "price": 5,
       "quantidade": 0
+    },
+    {
+      "name": "X-Yumi",
+      "description": "Pão em formato de gato, com hamburguer de carne de soja.",
+      "price": "17",
+      "quantidade": "0",
+      "id": 9
     }
   ]
 }
