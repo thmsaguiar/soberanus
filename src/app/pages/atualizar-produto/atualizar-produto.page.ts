@@ -20,8 +20,6 @@ export class AtualizarProdutoPage implements OnInit {
   public url = 'http://localhost:3000/products';
   public rota: ActivatedRoute;
 
-  formProduto: FormGroup;
-
   public id: string;
 
   public name: string;
