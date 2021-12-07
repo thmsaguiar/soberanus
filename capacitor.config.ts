@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'soberanus-app',
+  appId: 'com.soberanus',
+  appName: 'soberanus',
   webDir: 'www',
   bundledWebRuntime: false
 };

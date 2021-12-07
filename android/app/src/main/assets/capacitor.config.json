@@ -1,0 +1,6 @@
+{
+	"appId": "com.soberanus",
+	"appName": "soberanus",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
