@@ -78,13 +78,13 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 
 # 🛠 <a name="techs">Tecnologias</a>
 
-- [Ionic Framework]
-- [LocalStorage]
-- [RestFulApi]
-- [Sass]
-- [BEM CSS]
-- [VSCode]
-- [Figma]
+- Ionic Framework
+- LocalStorage
+- RestFulApi
+- Sass
+- BEM CSS
+- VSCode
+- Figma
 
 ---
 
