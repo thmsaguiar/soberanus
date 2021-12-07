@@ -31,7 +31,6 @@ O projeto foi inicialmente pensado para controlar as vendas de uma hamburgueria.
 11. [Como Executar](#executar)
 12. [Participantes](#participants)
 
-
 ---
 
 # 📱 Telas do APP
