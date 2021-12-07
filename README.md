@@ -91,7 +91,7 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 # 🚀 <a name="executar">Como Executar</a>
 
 - `npm install` para instalar os pacotes e dependências
-- `npm install json-server — save-dev` para instalar os pacotes e dependências
+- `npm install json-server — save-dev` para instalar a REST api
 - `npm run servidor` para rodar a api na https://localhost:3000
 
 ---
