@@ -20,7 +20,7 @@ O projeto foi inicialmente pensado para controlar as vendas de uma hamburgueria.
 
 1. [Descrição](#description)
 2. [Home](#home)
-3. [Login](#login)
+3. [Login & Signup](#login)
 4. [Cardápio](#cardapio)
 5. [Comprovante](#comprovante)
 6. [Histórico de Vendas](#historico)
@@ -41,37 +41,47 @@ A pagina inicial do aplicativo contém a logo e cores correspondente ao estabele
 
 <img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/home.png?raw=true" width="35%"><br>
 
-## <a name="login">02. Login</a>
+## <a name="login">02. Login & Signup</a>
 
-Página de login acessível para os funcionários.
+Página de login e cadastro acessível para os funcionários.
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/initial.png?raw=true" width="75%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/login-signup.png?raw=true" width="75%"><br>
 
 ## <a name="cardapio">03. Cardápio</a>
 
 Página que contém o itens do cardápio, permitindo adicionar os produtos a um pedido.
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/initial.png?raw=true" width="75%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/request.png?raw=true" width="35%"><br>
 
 ## <a name="comprovante">04. Comprovantes</a>
 
 Ao finalizar um pedido, o app gera um comprovante de venda, podendo ser visualizado nessa tela.
 
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/sucess-resume.png?raw=true" width="75%"><br>
+
 ## <a name="historico">05. Histórico de Vendas</a>
 
 O app conta com o histórico de todas as vendas, posibilitando a visualização do comprovante e exclusão do mesmo.
+
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/historic.png?raw=true" width="35%"><br>
 
 ## <a name="produtos">06. Lista de Produtos</a>
 
 A listagem de produtos é feita por meio da RESTful API. Permitindo também a remoção de um produto fazendo uma requisição DELETE.
 
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/products.png?raw=true" width="35%"><br>
+
 ## <a name="cadastroproduto">07. Cadastro de Produtos</a>
 
 O app permite o cadastro de novos produtos, ele é feito por meio da requisição POST da RESTful API.
 
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/add-product.png?raw=true" width="35%"><br>
+
 ## <a name="atualizacaoproduto">08. Atualização de Produtos</a>
 
 Para se ter dados confiáveis, a atualização de informações dos produtos é feita por meio da requisição PUT da RESTful API.
+
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/edit.png?raw=true" width="35%"><br>
 
 ---
 
@@ -80,7 +90,7 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 - Ionic Framework
 - LocalStorage
 - RESTful API
-- Sass
+- SASS
 - BEM CSS
 - VSCode
 - Figma
@@ -98,7 +108,7 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 # 💼 <a name="participants">Participantes do projeto</a>
 
 | [<img src="https://github.com/thmsaguiar.png?size=115" width=115><br><sub>@thmsaguiar</sub>](https://github.com/thmsaguiar) | [<img src="https://github.com/brunovns.png?size=115" width=115><br><sub>@brunovns</sub>](https://github.com/brunovns) | [<img src="https://github.com/DenilsonBernardodoNascimento.png?size=115" width=115><br><sub>@DenilsonBernardodoNascimento</sub>](https://github.com/DenilsonBernardodoNascimento) | [<img src="https://github.com/otonalmeidas.png?size=115" width=115><br><sub>@otonalmeidas</sub>](https://github.com/otonalmeidas) | [<img src="https://github.com/NaldooSilva.png?size=115" width=115><br><sub>@NaldooSilva</sub>](https://github.com/NaldooSilva) | [<img src="https://github.com/rodneicarvalho.png?size=115" width=115><br><sub>@rodneicarvalho</sub>](https://github.com/rodneicarvalho) |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| :-------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
 
 ---
 
