@@ -63,15 +63,15 @@ O app conta com o histórico de todas as vendas, posibilitando a visualização 
 
 ## <a name="produtos">06. Lista de Produtos</a>
 
-A listagem de produtos é feita por meio da Rest API. Permitindo também a remoção de um produto fazendo uma requisição DELETE.
+A listagem de produtos é feita por meio da RESTful API. Permitindo também a remoção de um produto fazendo uma requisição DELETE.
 
 ## <a name="cadastroproduto">07. Cadastro de Produtos</a>
 
-O app permite o cadastro de novos produtos, ele é feito por meio da requisição POST da Rest API.
+O app permite o cadastro de novos produtos, ele é feito por meio da requisição POST da RESTful API.
 
 ## <a name="atualizacaoproduto">08. Atualização de Produtos</a>
 
-Para se ter dados confiáveis, a atualização de informações dos produtos é feita por meio da requisição PUT da Rest API.
+Para se ter dados confiáveis, a atualização de informações dos produtos é feita por meio da requisição PUT da RESTful API.
 
 ---
 
@@ -79,7 +79,7 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 
 - Ionic Framework
 - LocalStorage
-- RestAPI
+- RESTful API
 - Sass
 - BEM CSS
 - VSCode
@@ -90,8 +90,8 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 # 🚀 <a name="executar">Como Executar</a>
 
 - `npm install` para instalar os pacotes e dependências
-- `npm install json-server — save-dev` para instalar a REST api
-- `npm run servidor` para rodar a api na https://localhost:3000
+- `npm install json-server — save-dev` para instalar o json-server
+- `npm run servidor` para rodar a RESTful API na https://localhost:3000
 
 ---
 
