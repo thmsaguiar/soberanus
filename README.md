@@ -81,7 +81,7 @@ O app permite o cadastro de novos produtos, ele é feito por meio da requisiçã
 
 Para se ter dados confiáveis, a atualização de informações dos produtos é feita por meio da requisição PUT da RESTful API.
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/edit.png?raw=true" width="35%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/edit-put.png?raw=true" width="35%"><br>
 
 ---
 
