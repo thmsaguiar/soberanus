@@ -14,7 +14,7 @@
 
 ## <a name="description">Descrição</a>
 
-O projeto foi inicialmente pensado para controlar as vendas de uma hamburgueria. O app conta com o controle de produtos oferecidos pelo estabelecimento, permitindo o usuário criar, editar e deletar produtos. Também permita a realização de uma venda gerando um comprovante de venda que será posteriormente armazenado no histórico. Facilitando o processo de atendimento de pequenos estabelecimentos.
+O projeto foi inicialmente pensado para controlar as vendas de uma hamburgueria. O app conta com o controle de produtos oferecidos pelo estabelecimento, permitindo o usuário criar, editar e deletar produtos. Também permita a realização de uma venda gerando um comprovante de venda que será posteriormente armazenado no histórico. Facilitando o processo de atendimento de pequenos estabelecimentos. O app faz o uso de uma RESTful API.
 
 ## Índice
 
@@ -45,7 +45,7 @@ A pagina inicial do aplicativo contém a logo e cores correspondente ao estabele
 
 Página de login e cadastro acessível para os funcionários.
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/login-signup.png?raw=true" width="75%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/login-signup.png?raw=true" width="35%"><br>
 
 ## <a name="cardapio">03. Cardápio</a>
 
@@ -67,19 +67,19 @@ O app conta com o histórico de todas as vendas, posibilitando a visualização 
 
 ## <a name="produtos">06. Lista de Produtos</a>
 
-A listagem de produtos é feita por meio da RESTful API. Permitindo também a remoção de um produto fazendo uma requisição DELETE.
+A listagem de produtos é feita por meio de uma requisição `GET` da RESTful API. Permitindo também a remoção de um produto fazendo uma requisição `DELETE`.
 
 <img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/products.png?raw=true" width="35%"><br>
 
 ## <a name="cadastroproduto">07. Cadastro de Produtos</a>
 
-O app permite o cadastro de novos produtos, ele é feito por meio da requisição POST da RESTful API.
+O app permite o cadastro de novos produtos, ele é feito por meio da requisição `POST` da RESTful API.
 
 <img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/add-product.png?raw=true" width="35%"><br>
 
 ## <a name="atualizacaoproduto">08. Atualização de Produtos</a>
 
-Para se ter dados confiáveis, a atualização de informações dos produtos é feita por meio da requisição PUT da RESTful API.
+Para se ter dados confiáveis, a atualização de informações dos produtos é feita por meio da requisição `PUT` da RESTful API.
 
 <img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/edit-put.png?raw=true" width="70%"><br>
 
@@ -108,7 +108,7 @@ Para se ter dados confiáveis, a atualização de informações dos produtos é 
 # 💼 <a name="participants">Participantes do projeto</a>
 
 | [<img src="https://github.com/thmsaguiar.png?size=115" width=115><br><sub>@thmsaguiar</sub>](https://github.com/thmsaguiar) | [<img src="https://github.com/brunovns.png?size=115" width=115><br><sub>@brunovns</sub>](https://github.com/brunovns) | [<img src="https://github.com/DenilsonBernardodoNascimento.png?size=115" width=115><br><sub>@DenilsonBernardodoNascimento</sub>](https://github.com/DenilsonBernardodoNascimento) | [<img src="https://github.com/otonalmeidas.png?size=115" width=115><br><sub>@otonalmeidas</sub>](https://github.com/otonalmeidas) | [<img src="https://github.com/NaldooSilva.png?size=115" width=115><br><sub>@NaldooSilva</sub>](https://github.com/NaldooSilva) | [<img src="https://github.com/rodneicarvalho.png?size=115" width=115><br><sub>@rodneicarvalho</sub>](https://github.com/rodneicarvalho) |
-| :-------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
+| :----: | :----: | :----: | :----: | :----: | :----: |
 
 ---
 
