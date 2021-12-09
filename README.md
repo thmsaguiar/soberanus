@@ -9,7 +9,7 @@
 
 <div align="center">
   <h1>🍔 Soberanu's App 🍔</h1>
-   Uma nova forma de atender a pedidos.
+  <em>"Uma nova forma de atender a pedidos."</em>
 </div>
 
 ## <a name="description">Descrição</a>
