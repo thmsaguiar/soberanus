@@ -45,7 +45,7 @@ A pagina inicial do aplicativo contém a logo e cores correspondente ao estabele
 
 Página de login e cadastro acessível para os funcionários.
 
-<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/login-signup.png?raw=true" width="35%"><br>
+<img src="https://github.com/thmsaguiar/soberanus/blob/main/src/assets/screenshots/login-signup.png?raw=true" width="75%"><br>
 
 ## <a name="cardapio">03. Cardápio</a>
 
